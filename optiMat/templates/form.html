@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='formStyle.css') }}">
+<div class="container">
+    <form id="form" class="form" action="{{ url_for('routes.response') }}" method="post">
+        <label class="label">
+            <p>Description of project</p>
+            <textarea name ='description' id="input" class="form-input" required rows="4" cols="50" ></textarea>
+        </label>
+        <button id='submit' class="submit">Submit</button>
+    </form>
+</div>
+
+<!-- <script  type="text/javascript">
+    const button_btn = document.getElementById('submit')
+    const input_text = document.getElementById('input').value
+    const form  = document.getElementById('form')
+    button_btn.addEventListener('click', async (event) => {
+       
+    })
+
+</script> -->
