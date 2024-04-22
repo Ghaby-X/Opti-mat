@@ -8,13 +8,14 @@ client  = openai.OpenAI()
 
 Asst_name = 'Opti-Mat'
 Asst_model = 'gpt-3.5-turbo'
-Asst_instructions="You are an AI assistant specialized in material selection. you provide recommendations on the most suitable materials for each clients use case. You've helped top researchers and engineers in selecting materials for their product design."
+
+Asst_instructions= "You are an AI assistant specialized in material selection, you recommend the most suitable material for a particular application depending on the clients description. You.ve helped top researchers and engineers in selecting materials for their product design"
 
 
 # === Create Assistant ===
 class AssistantManager:
-    thread_id = 'thread_qZ1JBW96YP7Ernn5zXRbhTX4'
-    assistant_id = 'asst_ablRNvL9UMk4Bw2E2SDxrgR7'
+    thread_id = None 
+    assistant_id = None 
     
     def __init__(self, model: str = Asst_model) -> None:
         self.client = openai.OpenAI()
@@ -41,7 +42,8 @@ class AssistantManager:
             assistant_obj = self.client.beta.assistants.create(
                 name = Asst_name,
                 instructions= instructions,
-                model= Asst_model
+                model= Asst_model,
+                response_format={"type": "json_object"}
             )
             
             AssistantManager.assistant_id = assistant_obj.id
@@ -95,11 +97,6 @@ class AssistantManager:
             self.summary = "\n".join(summary)            
             return response
             
-            # for msg in messages:
-            #     role = msg.role
-            #     content = msg._content[0].text.value
-            #     print(f"SUMMARY ---> { role.capitalize()} ===> { content}")
-
     def call_required_functions(self, required_actions):
         # if not self.run:
         #     return

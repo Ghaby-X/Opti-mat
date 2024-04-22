@@ -9,8 +9,9 @@
 .response {
     height: 500px;
     width: 700px;
-    background-color: rgb(250, 196, 196);
+    background-color: rgb(209, 209, 209);
     border-width: 4px;
     border-radius: 10px;
-    padding: 10px;
+    padding: 50px;
+    display: block;
 }
