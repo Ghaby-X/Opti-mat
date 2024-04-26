@@ -1,20 +1,29 @@
-<link rel="stylesheet" href="{{ url_for('static', filename='formStyle.css') }}">
-<div class="container">
-    <form id="form" class="form" action="{{ url_for('routes.response') }}" method="post">
-        <label class="label">
-            <p>Description of project</p>
-            <textarea name ='description' id="input" class="form-input" required rows="4" cols="50" ></textarea>
-        </label>
-        <button id='submit' class="submit">Submit</button>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='formStyle.css') }}"
+/>
+<body class="body">
+  <div id="questionnaire">
+    <h1>OPTI-MAT</h1>
+    <h2>Your Material Selection Assistant</h2>
+    <form id="questionsForm" action="/response" method="post">
+      <div class="question-container" id="1">
+        <p>1. What project are you working on today</p>
+        <input type="text" name="about" required />
+      </div>
+      <div class="question-container" id="2">
+        <p>2. what do you want your material to do functionally?</p>
+        <input type="text" name="function" required />
+      </div>
+      <div class="question-container">
+        <p>3. What's your cost constraint in this project?</p>
+        <input type="text" name="cost_constraint" required />
+      </div>
+
+      <div>
+        <button type="submit">Submit</button>
+      </div>
     </form>
-</div>
-
-<!-- <script  type="text/javascript">
-    const button_btn = document.getElementById('submit')
-    const input_text = document.getElementById('input').value
-    const form  = document.getElementById('form')
-    button_btn.addEventListener('click', async (event) => {
-       
-    })
-
-</script> -->
+  </div>
+  <script src="{{ url_for('static', filename='form.js') }}"></script>
+</body>

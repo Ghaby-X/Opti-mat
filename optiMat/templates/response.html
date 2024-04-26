@@ -1,7 +1,30 @@
-<link rel="stylesheet" href="{{ url_for('static', filename='responseStyle.css') }}"/>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='responseStyle.css') }}"
+/>
 
 <div class="container">
-    <span class="response">
-        {{ response }}
-    </span>
+  <div class="response">
+    <div class="title">{{ title }}</div>
+    <div class="material">
+      <span class="material-key">Material: </span>{{ material}}
+    </div>
+    <div class="reason">
+      <div class="reason-key">reason</div>
+      <div class="reason-text">{{ reason }}</div>
+    </div>
+    <div class="key_properties">
+      <div class="key_properties-key">Key Properties</div>
+      <ul class="key-properties-text">
+        {% for i in key_properties %}
+        <li>{{ i }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="button">
+      <a href="/form">
+        <button>Ask New Question</button>
+      </a>
+    </div>
+  </div>
 </div>

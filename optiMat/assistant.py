@@ -1,6 +1,7 @@
 import openai
 import time
 from dotenv import load_dotenv
+import os
 
 load_dotenv()
 
@@ -8,6 +9,7 @@ client  = openai.OpenAI()
 
 Asst_name = 'Opti-Mat'
 Asst_model = 'gpt-3.5-turbo'
+Asst_id = os.environ.get("ASST_ID")
 
 Asst_instructions= "You are an AI assistant specialized in material selection, you recommend the most suitable material for a particular application depending on the clients description. You.ve helped top researchers and engineers in selecting materials for their product design"
 
@@ -15,7 +17,7 @@ Asst_instructions= "You are an AI assistant specialized in material selection, y
 # === Create Assistant ===
 class AssistantManager:
     thread_id = None 
-    assistant_id = None 
+    assistant_id = Asst_id 
     
     def __init__(self, model: str = Asst_model) -> None:
         self.client = openai.OpenAI()

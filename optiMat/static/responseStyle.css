@@ -1,17 +1,80 @@
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+* {
+  font-size: 20px;
 }
 
 .response {
-    height: 500px;
-    width: 700px;
-    background-color: rgb(209, 209, 209);
-    border-width: 4px;
-    border-radius: 10px;
-    padding: 50px;
-    display: block;
+  padding: 40px;
+  max-width: 700px;
+  background-color: rgb(255, 249, 249);
+  border-width: 4px;
+  border-radius: 10px;
+  padding: 50px;
+  display: block;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.title {
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 60px;
+}
+
+.material-key {
+  font-weight: bold;
+}
+
+.material {
+  margin-bottom: 40px;
+}
+
+.reason-key {
+  font-style: italic;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.reason-text {
+  font-style: italic;
+}
+
+.reason {
+  margin-bottom: 40px;
+}
+
+.key_properties-key {
+  font-style: italic;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: rgb(162, 203, 255);
+  border-radius: 10px;
+  border-style: none;
+}
+
+button:hover {
+  background-color: rgb(207, 227, 253);
 }
