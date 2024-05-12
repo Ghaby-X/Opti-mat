@@ -24,6 +24,10 @@ body {
   flex-direction: column;
 }
 
+.loading {
+  display: none;
+}
+
 h1,
 h2 {
   color: #1d2743;
@@ -47,7 +51,7 @@ button {
 }
 
 button:hover {
-  background-color: #202841;
+  background-color: #5b6586;
 }
 
 div.question-item {
@@ -66,7 +70,8 @@ p {
   margin-bottom: 20px;
 }
 
-input[type="text"] {
+input[type="text"],
+textarea {
   width: calc(100% - 20px);
   padding: 8px 10px;
   margin-top: 4px;

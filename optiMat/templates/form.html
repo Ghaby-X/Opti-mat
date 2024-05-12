@@ -8,20 +8,37 @@
     <h2>Your Material Selection Assistant</h2>
     <form id="questionsForm" action="/response" method="post">
       <div class="question-container" id="1">
-        <p>1. What project are you working on today</p>
-        <input type="text" name="about" required />
+        <p>1. What field is your project in?</p>
+        <input
+          type="text"
+          name="field"
+          placeholder="e.g. biomedical engineering"
+          required
+        />
       </div>
       <div class="question-container" id="2">
-        <p>2. what do you want your material to do functionally?</p>
-        <input type="text" name="function" required />
+        <p>2. Brief description of your project?</p>
+        <textarea
+          type="text"
+          name="description"
+          rows="5"
+          cols="76"
+          required
+          placeholder="I am designing the strap of a wearable biomedical watch. "
+        ></textarea>
       </div>
       <div class="question-container">
-        <p>3. What's your cost constraint in this project?</p>
-        <input type="text" name="cost_constraint" required />
+        <p>3. What are some key features for your products</p>
+        <input
+          type="text"
+          name="features"
+          placeholder="e.g. low cost, durable, biocompatible"
+          required
+        />
       </div>
 
       <div>
-        <button type="submit">Submit</button>
+        <button type="submit" id="sumbit">Submit</button>
       </div>
     </form>
   </div>

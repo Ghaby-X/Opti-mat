@@ -7,11 +7,11 @@ import json
 
 bp = Blueprint('routes', __name__)
 
-@bp.route('/')
-def index():
-    return '<p>Blueprint baby</p>'
+# @bp.route('/')
+# def index():
+#     return '<p>Blueprint baby</p>'
 
-@bp.route('/form', methods=('GET', 'POST'))
+@bp.route('/', methods=('GET', 'POST'))
 def form():
     return render_template('form.html')
 
@@ -20,14 +20,14 @@ def process():
     if request.method == 'GET':
         print('not allowed')
         return 'method not allowed'
-    about: str = request.form.get('about')
-    function: str = request.form.get('function')
-    cost_constraint: str = request.form.get('cost_constraint')
+    field: str = request.form.get('field')
+    description: str = request.form.get('description')
+    features: str = request.form.get('features')
     
     content = {
-        "about": about,
-        "function": function,
-        "cost_constraint": cost_constraint,
+        "field": field,
+        "description": description,
+        "features": features,
     }
 
     content = str(content)
